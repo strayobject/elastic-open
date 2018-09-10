@@ -1,0 +1,8 @@
+version: '2'
+services:
+  apm:
+    image: docker.elastic.co/apm/apm-server:6.4.0
+    ports:
+      - 8200:8200
+    volumes:
+      - ./settings/apm-server.yml:/usr/share/apm-server/apm-server.yml

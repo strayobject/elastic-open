@@ -1,0 +1,10 @@
+version: '2'
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.4.0
+    ports:
+      - 5044:5044
+      - 12201:12201/udp
+    volumes:
+      - ./settings/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./pipeline/pipeline.conf:/usr/share/logstash/pipeline/pipeline.conf
